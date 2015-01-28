@@ -22,27 +22,31 @@ and what you should write is the favNum function that makes the code above work,
     
 */
 
-
+var first = function(arr, cb) {
+  cb(arr[0]);
+};
 
   //Code Here for first
   
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 first(names, function(firstName){
-  console.log('The first name in names is ', firstName)
+  alert('The first name in names is ' + firstName);
 });
 
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
+var last = function(arr, cb) {
+  cb(arr[arr.length - 1]);
+};
 
 
   //Code Here for last
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
 last(names, function(lastName){
-  console.log('The last name in names is ', lastName);
+  alert('The last name in names is ' + lastName);
 });
 
 
@@ -51,16 +55,15 @@ last(names, function(lastName){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
-
-
+var multiply = function(num1, num2, cb) {
+  cb(num1 * num2);
+};
 
   //Code Here for multiply
 
 multiply(4, 3, function(answer){
   console.log('The answer is ', answer); //should console.log 12
-})
+});
 
 
 
@@ -68,9 +71,16 @@ multiply(4, 3, function(answer){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
-
+var contains = function(arr, str, cb) {
+  for (var i = 0; i < arr.length; i++) {
+    var bool = false;
+    if (arr[i] === str) {
+      bool = true;
+      break;
+    }
+  }
+  cb(bool);
+};
 
   //Code Here for contains
 
@@ -90,7 +100,19 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+var uniq = function(arr, cb) {
+  var objArr = {};
+  objArr.tyler = arr[0];
+  objArr.cahlan = arr[1];
+  objArr.ryan = arr[2];
+  objArr.colt = arr[3];
+  objArr.blaine = arr[5];
+  var newArr = [];
+  for (var key in arr) {
+    newArr.splice(0, key);
+  }
+  cb(newArr);
+};
 
     //Code Here for uniq
 
@@ -99,14 +121,15 @@ uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
-
-
+//finish this code above!!!!!!!!!!!!!!!!!!!!!!
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-
+var each = function(arr, cb) {
+  
+};
 
     //Code Here for each
 
