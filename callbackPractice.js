@@ -127,8 +127,8 @@ uniq(names, function(uniqArr){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-var each = function(arr, cb) {
-  
+var each = function(arr, num, item, cb) {
+  cb(num, arr)
 };
 
     //Code Here for each
