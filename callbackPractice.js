@@ -100,7 +100,7 @@ contains(names, 'Colt', function(result){
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-var uniq = function(arr, cb) {
+/*var uniq = function(arr, cb) {
   var objArr = {};
   objArr.tyler = arr[0];
   objArr.cahlan = arr[1];
@@ -112,6 +112,19 @@ var uniq = function(arr, cb) {
     newArr.splice(0, key);
   }
   cb(newArr);
+};*/
+//what follows is how to make turning the array into an object work
+
+var uniq = function(arr, cb) {
+    var uniqObj = {};
+    var returnArr = [];
+    for (var i = 0; i < arr.length; i++) {
+        uniqObj[arr[i]] = null;
+    }
+    for (var key in uniqObj) {
+        returnArr.push(key);
+    }
+    cb(returnArr);
 };
 
     //Code Here for uniq
@@ -121,14 +134,13 @@ uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
-//finish this code above!!!!!!!!!!!!!!!!!!!!!!
 
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
 
-var each = function(arr, num, item, cb) {
-  cb(num, arr)
+var each = function(arr, cb) {
+  cb(arr);
 };
 
     //Code Here for each
@@ -144,9 +156,13 @@ each(names, function(item, indice){
 
 /* NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM ---- NEXT PROBLEM */
 
-
-
-
+var getUserById = function(arr, strID, cb) {//remeber cd means callback function
+  for (var i = 0; i < arr.length; i++) {
+    if (arr[i].id === strID) {
+      cb(arr[i]);
+    }
+  }
+};
 
  //code here for getUserById
 
